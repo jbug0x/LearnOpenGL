@@ -1,0 +1,12 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\github\\learnopengl\\libraries\\include\\glad\\glad.h",
+        "ProvidedModule": "",
+        "Includes": [
+            "d:\\github\\learnopengl\\libraries\\include\\khr\\khrplatform.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
