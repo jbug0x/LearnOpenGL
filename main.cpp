@@ -33,23 +33,26 @@ int main()
 
 	glfwMakeContextCurrent(window);
 
-	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) 
+	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
 	{
 		cout << "Failed to initialize GLAD" << endl;
 		return -1;
 	}
-	
+
 	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
 	while (!glfwWindowShouldClose(window))
 	{
+		// processando os inputs
 		processInput(window);
 
+		// renderizando
+		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+		glClear(GL_COLOR_BUFFER_BIT);
+
+		// checando eventos e buffers
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 	}
-
-	glfwTerminate();
-
 	return 0;
 }
