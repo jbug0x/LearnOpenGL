@@ -116,7 +116,8 @@
             "c:\\program files (x86)\\windows kits\\10\\include\\10.0.28000.0\\ucrt\\locale.h",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.52.37025\\include\\ostream",
             "d:\\github\\learnopengl\\libraries\\include\\glad\\glad.h",
-            "d:\\github\\learnopengl\\libraries\\include\\khr\\khrplatform.h"
+            "d:\\github\\learnopengl\\libraries\\include\\khr\\khrplatform.h",
+            "d:\\github\\learnopengl\\libraries\\include\\glfw\\glfw3.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []
