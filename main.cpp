@@ -1,78 +1,67 @@
 #include <iostream>
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
+#include <glad/glad.h>  
+#include <GLFW/glfw3.h> 
 
-using namespace std;
-
-static void framebuffer_size_callback(GLFWwindow* window, int width, int height)
-{
-	glViewport(0, 0, width, height);
-}
-
-static void processInput(GLFWwindow* window)
-{
-	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-		glfwSetWindowShouldClose(window, true);
-}
+float nColor(float color);
 
 int main()
 {
-	float vertices[] = {
-		-0.5f, -0.5f, 0.0f,
-		 0.5f, -0.5f, 0.0f,
-		 0.0f,  0.5f, 0.0f
-	};
+	constexpr int HEIGHT = 800;
+	constexpr int WIDHT = 800;
 
+	// Initialize GLFW
 	glfwInit();
+
+	// Tell GLFW what version of OpenGL we are using
+	// In this case we are isong OpenGL 3.3
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+	// Tell GLFW we are using the CORE profile
+	// So that mean we only the modern funcions
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-	GLFWwindow* window = glfwCreateWindow(800, 600, "LearnOpenGL", NULL, NULL);
-
+	// Create a GLFWwindow object of 800x800 pixels, naming it "Learn OpenGL".
+	// We are using windows in normal mode and the default monitor.
+	GLFWwindow* window = glfwCreateWindow(WIDHT, HEIGHT, "Learn OpenGL", NULL, NULL);
+	// Error check if the windows fails to create
 	if (window == NULL)
 	{
-		cout << "Failed to create GLFW window" << endl;
+		std::cout << "Failed to create GLFW window" << std::endl;
 		glfwTerminate();
 		return -1;
 	}
-
+	// Introduce the window into the current context
 	glfwMakeContextCurrent(window);
 
-	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
-	{
-		cout << "Failed to initialize GLAD" << endl;
-		return -1;
-	}
+	// Load GLAD so it configures OpenGL
+	gladLoadGL();
 
-	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+	// Specify the viewportof OpenGL in Windows
+	// In this case the viewport goes from from x = 9,y = 0, to x = 0, y = 800
+	glViewport(0, 0, WIDHT, HEIGHT);
+	// Specify the color of the background
+	glClearColor(nColor(255), nColor(165), nColor(0), 1.0f);
+	// Clear the back buffer and assing the new color to it
+	glClear(GL_COLOR_BUFFER_BIT);
+	// Swap the back buffer with the front buffer
+	glfwSwapBuffers(window);
 
+	// Main while loop
 	while (!glfwWindowShouldClose(window))
 	{
-		// processando os inputs
-		processInput(window);
-
-		// renderizando
-		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-		glClear(GL_COLOR_BUFFER_BIT);
-
-		// Triangulo
-		
-		// Cria a variável na RAM que vai guardar o ID do buffer
-		unsigned int VBO;      
-
-		// Pede ao OpenGL um identificador único na GPU (ainda sem alocar VRAM)
-		glGenBuffers(1, &VBO); 
-
-		// Faz a amaração e define para qual terefa vamos usar o buffer. Ativa o buffer no alvo de vértices
-		glBindBuffer(GL_ARRAY_BUFFER, VBO); 
-		
-		// Aloca VRAM, copia os vértices da CPU para a GPU e avisa que os dados serão estáticos (GL_STATIC_DRAW)
-		glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-
-		// checando eventos e buffers
-		glfwSwapBuffers(window);
+		// Take cara of all GLFW events
 		glfwPollEvents();
 	}
+
+	// Delete window before ending the program
+	glfwDestroyWindow(window);
+	// Terminate GLFW before ending the program
+	glfwTerminate();
+
 	return 0;
+}
+
+// Normalize color for glClearColor
+float nColor(float color) {
+	return color / 255.0f;
 }
