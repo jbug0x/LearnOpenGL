@@ -1,5 +1,5 @@
-#ifndef SHADER_CLASS_H
-#define SHADER_CLASS_H
+#ifndef SHADER_H
+#define SHADER_H
 
 #include <glad/glad.h>
 #include <string>
@@ -20,4 +20,4 @@ public:
 	void Delete();
 };
 
-#endif SHADER_CLASS_H
+#endif // SHADER_H

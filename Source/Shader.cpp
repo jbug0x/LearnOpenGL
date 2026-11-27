@@ -1,4 +1,4 @@
-#include "shaderClass.h"
+#include "Shader.h"
 
 std::string get_file_contents(const char* filename)
 {
@@ -20,7 +20,7 @@ Shader::Shader(const char* vertexFile, const char* fragmnetFile)
 {
 	std::string vertexCode = get_file_contents(vertexFile);
 	std::string fragmnetCode = get_file_contents(fragmnetFile);
-	
+
 	const char* vertexSource = vertexCode.c_str();
 	const char* fragmentSource = fragmnetCode.c_str();
 
@@ -40,7 +40,7 @@ Shader::Shader(const char* vertexFile, const char* fragmnetFile)
 
 	// Create Shader Program Object and get reference
 	ID = glCreateProgram();
-	// Attach Vertex shader and Fragment 
+	// Attach Vertex shader and Fragment
 	glAttachShader(ID, vertexShader);
 	glAttachShader(ID, fragmentShader);
 	// Wrap-up/link all the shaders together into the Shader Program
@@ -51,7 +51,7 @@ Shader::Shader(const char* vertexFile, const char* fragmnetFile)
 	glDeleteShader(fragmentShader);
 }
 
-void Shader::Activate() 
+void Shader::Activate()
 {
 	// Tell OpenGL which Shader Program we want to use
 	glUseProgram(ID);

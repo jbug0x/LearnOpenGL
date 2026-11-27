@@ -1,6 +1,7 @@
 #include <iostream>
-#include <glad/glad.h>  
-#include <GLFW/glfw3.h> 
+#include <glad/glad.h>
+#include <GLFW/glfw3.h>
+#include <cmath>
 
 float nColor(float color);
 
@@ -57,8 +58,8 @@ int main()
 	// In this case the viewport goes from from x = 9,y = 0, to x = 0, y = 800
 	glViewport(0, 0, WIDHT, HEIGHT);
 
-	
-	// Vertices coordinates 
+
+	// Vertices coordinates
 	GLfloat vertices[] =
 	{
 		-0.5f, -0.5f * float(sqrt(3)) / 3, 0.0f, // Lower left corner
@@ -95,7 +96,7 @@ int main()
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
 	// Bind the EBO specigying it's GL_ELEMENT_ARRAY_BUFFER
- 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
 	// Introduce the indices into the EBO
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
