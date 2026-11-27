@@ -71,8 +71,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>D:\Github\LearnOpenGL\libraries\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\Github\LearnOpenGL\libraries\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Cpp\libraries\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Cpp\libraries\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>D:\Github\LearnOpenGL\libraries\include;$(IncludePath)</IncludePath>
@@ -157,6 +157,7 @@
   <ItemGroup>
     <ClCompile Include="LearnOpenGL\glad.c" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="ShaderClass.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="default.frag" />
@@ -164,6 +165,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="shaderClass.h" />
+    <ClInclude Include="VBO.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

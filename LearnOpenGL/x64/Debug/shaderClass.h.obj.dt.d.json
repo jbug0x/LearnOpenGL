@@ -1,11 +1,11 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "d:\\github\\learnopengl\\shaderclass.h",
+        "Source": "c:\\users\\bispo\\source\\repos\\jbug0x\\learnopengl\\shaderclass.h",
         "ProvidedModule": "",
         "Includes": [
-            "d:\\github\\learnopengl\\libraries\\include\\glad\\glad.h",
-            "d:\\github\\learnopengl\\libraries\\include\\khr\\khrplatform.h",
+            "c:\\cpp\\libraries\\include\\glad\\glad.h",
+            "c:\\cpp\\libraries\\include\\khr\\khrplatform.h",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.52.37025\\include\\string",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.52.37025\\include\\yvals_core.h",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.52.37025\\include\\vcruntime.h",

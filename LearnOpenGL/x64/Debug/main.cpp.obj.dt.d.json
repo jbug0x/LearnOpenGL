@@ -1,7 +1,7 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "d:\\github\\learnopengl\\main.cpp",
+        "Source": "c:\\users\\bispo\\source\\repos\\jbug0x\\learnopengl\\main.cpp",
         "ProvidedModule": "",
         "Includes": [
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.52.37025\\include\\iostream",
@@ -115,9 +115,9 @@
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.52.37025\\include\\clocale",
             "c:\\program files (x86)\\windows kits\\10\\include\\10.0.28000.0\\ucrt\\locale.h",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.52.37025\\include\\ostream",
-            "d:\\github\\learnopengl\\libraries\\include\\glad\\glad.h",
-            "d:\\github\\learnopengl\\libraries\\include\\khr\\khrplatform.h",
-            "d:\\github\\learnopengl\\libraries\\include\\glfw\\glfw3.h"
+            "c:\\cpp\\libraries\\include\\glad\\glad.h",
+            "c:\\cpp\\libraries\\include\\khr\\khrplatform.h",
+            "c:\\cpp\\libraries\\include\\glfw\\glfw3.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

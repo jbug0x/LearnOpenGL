@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "LearnOpenGL\\x64\\Debug\\VBO.obj",
+            "outputs": [
+                "LearnOpenGL\\x64\\Debug\\VBO.h.obj.dt.module.json",
+                "LearnOpenGL\\x64\\Debug\\VBO.h.obj.dt.d.json"
+            ],
+            "requires": []
+        }
+    ]
+}

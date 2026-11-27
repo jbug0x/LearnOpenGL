@@ -57,32 +57,7 @@ int main()
 	// In this case the viewport goes from from x = 9,y = 0, to x = 0, y = 800
 	glViewport(0, 0, WIDHT, HEIGHT);
 
-	// Crete Vertex Shader Object and get reference
-	GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
-	// Attach Vertex Shader source to the Vertex Shader Object
-	glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
-	// Compile the Vertex Shader into machine code
-	glCompileShader(vertexShader);
-
-	// Crete Fragment Shader Object and get reference
-	GLuint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-	// Attach Fragment Shader source to the Fragment Shader Object
-	glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
-	// Compile the Fragment Shader into machine code
-	glCompileShader(fragmentShader);
-
-	// Create Shader Program Object and get reference
-	GLuint shaderProgram = glCreateProgram();
-	// Attach Vertex shader and Fragment 
-	glAttachShader(shaderProgram, vertexShader);
-	glAttachShader(shaderProgram, fragmentShader);
-	// Wrap-up/link all the shaders together into the Shader Program
-	glLinkProgram(shaderProgram);
-
-	// Delete the now useleess Vertex and Fragment
-	glDeleteShader(vertexShader);
-	glDeleteShader(fragmentShader);
-
+	
 	// Vertices coordinates 
 	GLfloat vertices[] =
 	{
@@ -146,8 +121,6 @@ int main()
 	{
 		glClearColor(nColor(255), nColor(153), nColor(51), 0.1f);
 		glClear(GL_COLOR_BUFFER_BIT);
-		// Tell OpenGL which Shader Program we want to use
-		glUseProgram(shaderProgram);
 		// Draw the trangle using the GL_TRIANGLES primitive
 		glBindVertexArray(VAO);
 		glDrawElements(GL_TRIANGLES, 9, GL_UNSIGNED_INT, 0);
@@ -161,7 +134,6 @@ int main()
 	glDeleteVertexArrays(1, &VAO);
 	glDeleteBuffers(1, &VBO);
 	glDeleteBuffers(1, &EBO);
-	glDeleteProgram(shaderProgram);
 
 	// Delete window before ending the program
 	glfwDestroyWindow(window);

@@ -24,6 +24,9 @@
     <ClCompile Include="LearnOpenGL\glad.c">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
+    <ClCompile Include="ShaderClass.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="default.vert">
@@ -35,6 +38,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="shaderClass.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="VBO.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
   </ItemGroup>
